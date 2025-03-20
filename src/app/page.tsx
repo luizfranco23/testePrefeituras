@@ -6,7 +6,25 @@ export default function Vix() {
   const apiUrl = process.env.NEXT_PUBLIC_API_JSON;
 
   const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState<any>(null);
+  interface DesignSystem {
+    Primary: string;
+    Secondary: string;
+  }
+
+  interface Data {
+    name: string;
+    identity: string;
+    designSystem: DesignSystem;
+    image?: {
+      formats?: {
+        thumbnail?: {
+          url: string;
+        };
+      };
+    };
+  }
+
+  const [data, setData] = useState<Data | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
