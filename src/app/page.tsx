@@ -71,15 +71,14 @@ export default function Vix() {
         Teste cor secundária
       </div>
 
-      {image && (
-        <Image
-          height={236}
-          width={236}
-          src={image}
-          alt="Imagem Thumbnail"
-          priority
-        />
-      )}
+
+      <Image
+        height={236}
+        width={236}
+        src={image || ""}
+        alt="Imagem Thumbnail"
+      />
+
     </div>
   );
 }
